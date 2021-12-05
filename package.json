@@ -1,0 +1,19 @@
+{
+  "name": "JavaScript Bot",
+  "version": "1.0.0",
+  "description": "JS Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": ["eval", "JavaScript"],
+  "author": "k1-1960/K1#1960",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^13.1.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "node": "^16.6.1"
+  }
+}
