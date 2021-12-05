@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const djs = require('discord.js');
 
 module.exports = {
 	name: 'messageCreate',
@@ -12,12 +12,12 @@ if(!message.content.startsWith(prefix)) return;
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase()
 
-let cmd = client.cmds.find(
+let cmd = bot.cmds.find(
 		c => c.name === command || (c.alias && c.alias.includes(command))
 	);
 	
 if(cmd) {
-  cmd.execute(client, message, args);
+  cmd.execute(bot, message, args);
     }
   }
 }
