@@ -4,6 +4,7 @@ const bot = new Client({ intents: 32735 });
 
 bot.cmds = new Collection();
 
+const fs = require('fs');
 const { readdirSync } = require('fs');
 const path = require("path");
 
@@ -13,13 +14,13 @@ const cmds = fs
 
 for (const code of cmds) {
 const cmd = require(`./bot/cmds/${code}`);
-client.cmds.set(cmd.name, cmd);
+bot.cmds.set(cmd.name, cmd);
 }
 
-const eventos = readdirSync(path.join(__dirname, 'eventos'));
+const eventos = readdirSync(path.join(__dirname, 'bot/eventos'));
 for(const file of eventos){
-const evento = require(path.join(__dirname, 'eventos', file));
-client.on(evento.name, (...args) => evento.run(client, ...args));
+const evento = require(path.join(__dirname, 'bot/eventos', file));
+bot.on(evento.name, (...args) => evento.run(bot, ...args));
 }
 
 bot.login(process.env.token)
