@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const { Client, Collection } = require("discord.js");
 const bot = new Client({ intents: 32735 });
-
+require('./express');
 bot.cmds = new Collection();
 
 const fs = require('fs');

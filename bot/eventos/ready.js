@@ -4,7 +4,15 @@ module.exports = {
  name: 'ready',
  run(bot) {
 
- bot.users.fetch("838091364344397835").then(o => o.send("Activo"))
+console.log(' [BOT] is ready!');
+
+   bot.user.setPresence({
+     status: 'online',
+     activities: [{
+       name: 'npm i utiljs-k | v0.5.4',
+       type: 'COMPETING'
+     }]
+   });
 
   }
 }
